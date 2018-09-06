@@ -32,4 +32,40 @@ class Home extends CI_Controller {
       $this->load->view('admin/addemployee',$data);
       $this->load->view('common/footer');
     }
+		 public function adminaddemployee(){
+		$data['name']				=	$this->input->post('name');
+		$data['email']				=	$this->input->post('email');
+		$data['password']			=	$this->input->post('password');
+		$data['phonenumber']		=	$this->input->post('phonenumber');
+		$data['beneficiary']		=	$this->input->post('beneficiary');
+		$data['emergency']			=	$this->input->post('emergency');
+		$data['designation']		=	$this->input->post('designation');
+		$data['cnic']				=	$this->input->post('cnic');
+		$data['shift']				=	$this->input->post('shift');
+		$data['jobdescription']		=	$this->input->post('jobdescription');
+		$data['fathername']			=	$this->input->post('fathername');
+		$data['dob']				=	$this->input->post('dob');
+		$data['maritialstatus']		=	$this->input->post('maritialstatus');
+		$data['address']			=	$this->input->post('address');
+		$data['city']				=	$this->input->post('city');
+		$data['state']				=	$this->input->post('state');
+		$data['employeetype']		=	$this->input->post('employeetype');
+		$data['reportingauthority']	=	$this->input->post('reportingauthority');
+		$data['lunchbreak']			=	$this->input->post('lunchbreak');
+		$data['namazbreak']			=	$this->input->post('namazbreak');
+		$data['startdate']			=	$this->input->post('startdate');
+		$data['enddate']			=	$this->input->post('enddate');
+		$current					=	$this->input->post('current');
+		if($current == "on"){
+			$data['current']		=	1;
+		}else{
+			$data['current']		=	0;
+		}
+		$data['role']				=	$this->input->post('role');
+		$data['departid']			=	$this->input->post('departid');
+		$data['datetime']			=	date("Y-m-d g:i:s");
+		$this->Insert->Insert_record_bytablename("users",$data);
+		redirect('Home/addemployee/success');
+	}
   }
+		 
