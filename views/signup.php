@@ -2,7 +2,7 @@
 				if(isset($error)){?>
 				<div class="alert alert-danger"><?php echo $error; ?></div>
 				<?php }elseif($success){ ?>
-                <div class="alert alert-success"><strong>Successfully !</strong> Update Record.</div>
+                <div class="alert alert-success"><strong>Successfully !</strong> Update Record HERE.</div>
 				<?php } ?>
                   <div class="form-panel">
                       <form action="<?php echo base_url('Home/adminaddemployee'); ?>" class="form-horizontal style-form" method="post">
